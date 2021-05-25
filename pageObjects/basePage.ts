@@ -35,4 +35,5 @@ export class BasePage {
     async getValue(elementBy: By) {
         return (await this.getElement(elementBy)).getAttribute('value')
     }
+
 }
