@@ -1,1 +1,1 @@
-# Supercook
+# MyStore
