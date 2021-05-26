@@ -1,8 +1,9 @@
-import { By, until, WebDriver } from "selenium-webdriver";
+import { Actions, By, until, WebDriver } from "selenium-webdriver";
 
 export class BasePage {
     driver: WebDriver
     url: string
+    action: Actions
     constructor (driver, url) { 
         this.driver = driver
         this.url = url
@@ -35,5 +36,8 @@ export class BasePage {
     async getValue(elementBy: By) {
         return (await this.getElement(elementBy)).getAttribute('value')
     }
-
+    
+async findElement(elementBy: By) {
+    return(await this.findElement(elementBy)).actions
+}
 }
