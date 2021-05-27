@@ -31,13 +31,23 @@ test('User can view order history', async () => {
       
 })
 test('User can fill out contact page', async () => {
-    await myPage.navigate()
+   
     await myPage.click(myPage.contactus)
     await myPage.click(myPage.subjectheading)
     await myPage.setInput(myPage.message, 'Your store is awesome')
-    await myPage.click(myPage.submitmessage)
+
 })
-afterAll(async () => {
+test('User can register for newsletter', async () => {
+    await myPage.setInput(myPage.newsletter,'belinda.rivas1@gmail.com')
+    await myPage.click(myPage.submitnewsletter)
+})
+test('User can search for items', async () => {
+    await myPage.setInput(myPage.searchbox, 'evening dress')
+    await myPage.click(myPage.submitsearch)
+    await myDriver.sleep(2000)
+})  
+    
+    afterAll(async () => {
     await myDriver.quit();
 });
 
