@@ -40,4 +40,7 @@ export class BasePage {
 async findElement(elementBy: By) {
     return(await this.findElement(elementBy)).actions
 }
+async dropdown(elementBy: By){
+    return(await this.dropdown(elementBy)).actions
+}
 }
